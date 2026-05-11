@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosario V. Espadera - Resume</title>
+    <script src="./tailwindcss.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cvNavy: "#2f4358",
+                        cvBlue: "#a7c4e7",
+                        cvPanel: "#e9edf1",
+                        cvText: "#1f2937"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "Segoe UI", "Tahoma", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#d9dde2] font-sans text-cvText antialiased">
+    <main class="min-h-screen w-full p-3 sm:p-5 lg:p-8">
+        <section class="mx-auto w-full max-w-[1120px] rounded-xl bg-[#eef0f2] p-3 shadow-2xl sm:p-5">
+            <div class="relative">
+                <header class="relative rounded-[22px] bg-cvNavy px-5 py-5 sm:px-6 lg:min-h-[110px] lg:pl-48 xl:pl-52">
+                    <div class="flex items-center justify-between gap-2 lg:gap-3">
+                        <div class="flex-1">
+                            <div class="text-center text-white lg:text-left">
+                                <h1 class="text-[clamp(1.2rem,2.2vw,2.35rem)] font-semibold tracking-tight">ROSARIO V. ESPADERA</h1>
+                                <p class="text-[clamp(0.8rem,1vw,1.1rem)] uppercase tracking-wide text-zinc-200">Web Developer</p>
+                            </div>
+                        </div>
+
+                        <nav class="hidden items-center gap-0.5 lg:flex lg:flex-wrap lg:justify-end">
+                            <button type="button" data-page="about-me" class="page-tab rounded border border-white/30 bg-white px-2.5 py-1.5 text-[clamp(0.65rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em] text-cvNavy transition hover:bg-white/90">About Me</button>
+                            <button type="button" data-page="profile" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-[clamp(0.65rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white/10">Profile</button>
+                            <button type="button" data-page="experience" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-[clamp(0.65rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white/10">Experience</button>
+                            <button type="button" data-page="expertise" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-[clamp(0.65rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white/10">Expertise</button>
+                            <button type="button" data-page="strengths" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-[clamp(0.65rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em] text-white transition hover:bg-white/10">Strengths</button>
+                        </nav>
+                    </div>
+
+                    <div class="mx-auto mt-4 h-24 w-24 overflow-hidden rounded-full border-4 border-[#eef0f2] shadow-md lg:absolute lg:left-6 lg:top-1/2 lg:mt-0 lg:h-40 lg:w-40 lg:-translate-y-1/2">
+                        <img src="profile/me.jpg" alt="Rosario V. Espadera" class="h-full w-full object-cover">
+                    </div>
+
+                    <nav class="mt-4 flex flex-wrap justify-center gap-2 lg:hidden text-[clamp(0.7rem,0.8vw,0.85rem)] font-semibold uppercase tracking-[0.1em]">
+                        <button type="button" data-page="about-me" class="page-tab rounded border border-white/30 bg-white px-2.5 py-1.5 text-cvNavy transition hover:bg-white/90">About Me</button>
+                        <button type="button" data-page="profile" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-white transition hover:bg-white/10">Profile</button>
+                        <button type="button" data-page="experience" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-white transition hover:bg-white/10">Experience</button>
+                        <button type="button" data-page="expertise" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-white transition hover:bg-white/10">Expertise</button>
+                        <button type="button" data-page="strengths" class="page-tab rounded border border-white/30 px-2.5 py-1.5 text-white transition hover:bg-white/10">Strengths</button>
+                    </nav>
+                </header>
+
+                <div class="mt-4 grid grid-cols-1 gap-0 lg:mt-6">
+
+                    <section class="bg-white px-5 py-6 sm:px-7 sm:py-8 lg:px-8 lg:py-10">
+                        <section id="pageContainer" class="min-h-[46vh] sm:min-h-[52vh] lg:min-h-[56vh]">
+                            <article class="page-panel hidden space-y-3" data-page-content="about-me">
+                                                        <section class="mb-6 space-y-3">
+                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Contact</h2>
+                            <div class="space-y-2 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
+                                <div class="flex items-start gap-2">
+                                    <img src="svgs/email.svg" alt="Email" class="mt-0.5 h-4 w-4 shrink-0">
+                                    <span class="break-all">s.rvespadera@usm.edu.ph</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <img src="svgs/phone.svg" alt="Phone" class="mt-0.5 h-4 w-4 shrink-0">
+                                    <span>09641310220</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <img src="svgs/location.svg" alt="Location" class="mt-0.5 h-4 w-4 shrink-0">
+                                    <span>Sudapin, Kidapawan City, North Cotabato</span>
+                                </div>
+                                 <div class="flex items-start gap-2">
+                                    <img src="svgs/web.svg" alt="Website" class="mt-0.5 h-4 w-4 shrink-0">
+                                    <a href="https://riosweb.tech" target="_blank" rel="noopener" class="text-blue-500 underline">riosweb.tech</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="mb-6 space-y-3">
+                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Education</h2>
+                            <div class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
+                                <p class="font-semibold">University of Southern Mindanao</p>
+                                <p>Kabacan, North Cotabato, Philippines</p>
+                                <p>2023 - Present</p>
+                            </div>
+                        </section>
+
+                        <section class="mb-6 space-y-3" id="skills">
+                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Skills</h2>
+                            <ul class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
+                                <li>- Web Development</li>
+                                <li>- Front-End</li>
+                                <li>- HTML, CSS, JavaScript</li>
+                                <li>- Responsive Design</li>
+                                <li>- UI/UX Design</li>
+                                <li>- GitHub and API Integration</li>
+                                <li>- Problem Solving</li>
+                            </ul>
+                        </section>
+
+                        <section class="space-y-3">
+                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Language</h2>
+                            <ul class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
+                                <li>English</li>
+                                <li>Filipino</li>
+                            </ul>
+                        </section>
+                            </article>
+                        <article class="page-panel space-y-3" data-page-content="profile">
+                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Profile</h2>
+                            <div class="h-px w-full bg-cvNavy/35"></div>
+                            <p class="max-w-[70ch] text-[clamp(0.92rem,1vw,1.1rem)] leading-[1.7] text-cvText/90">
+                                I am a passionate and self-motivated Web Developer who enjoys creating modern, functional, and user-friendly web applications. I have skills in front-end development and interface design, and I like turning ideas into practical digital solutions. Through personal and experimental projects, I have developed my creativity, problem-solving skills, and ability to keep learning new things. I am dedicated to improving my technical skills, adapting to new technologies, and delivering quality work.
+                            </p>
+                        </article>
+
+                        <article class="page-panel hidden space-y-3" data-page-content="experience">
+                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Experience</h2>
+                            <div class="h-px w-full bg-cvNavy/35"></div>
+                            <div class="space-y-2 text-[clamp(0.9rem,1vw,1.06rem)]">
+                                <p class="font-semibold">Web Developer</p>
+                                <p class="text-cvText/80">Self-Employed / Project-Based</p>
+                                <ul class="list-disc space-y-1 pl-5 text-cvText/90">
+                                    <li>Developed and launched classrio.me, an educational website for students and teachers.</li>
+                                    <li>Implemented responsive design principles across mobile, tablet, and desktop.</li>
+                                    <li>Integrated modern web technologies and best practices for educational content delivery.</li>
+                                    <li>Demonstrated front-end and UI/UX skills through project-based development.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="page-panel hidden space-y-3" data-page-content="expertise">
+                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Technical Expertise</h2>
+                            <div class="h-px w-full bg-cvNavy/35"></div>
+                            <div class="grid gap-3 sm:grid-cols-2">
+                                <div class="rounded-md border border-cvNavy/25 bg-[#f8f9fb] p-3">
+                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Languages</h3>
+                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">HTML, CSS, JavaScript</p>
+                                </div>
+                                <div class="rounded-md border border-cvNavy/25 bg-[#f8f9fb] p-3">
+                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Development</h3>
+                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">Web Development, Front-End, Responsive Design</p>
+                                </div>
+                                <div class="rounded-md border border-cvNavy/25 bg-[#f8f9fb] p-3">
+                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Design</h3>
+                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">UI/UX Design, Interface Design</p>
+                                </div>
+                                <div class="rounded-md border border-cvNavy/25 bg-[#f8f9fb] p-3">
+                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Tools</h3>
+                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">GitHub, Version Control, API Integration</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="page-panel hidden space-y-3" data-page-content="strengths">
+                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Key Strengths</h2>
+                            <div class="h-px w-full bg-cvNavy/35"></div>
+                            <ul class="space-y-1 text-[clamp(0.9rem,1vw,1.06rem)] text-cvText/90">
+                                <li>Strong problem-solving and debugging abilities.</li>
+                                <li>Dedicated to continuous learning and skill improvement.</li>
+                                <li>Creative and innovative approach to web development.</li>
+                                <li>Reliable team player with excellent communication skills.</li>
+                                <li>Adaptable to new technologies and methodologies.</li>
+                                <li>Attention to detail in code quality and user experience.</li>
+                            </ul>
+                        </article>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            const tabs = document.querySelectorAll(".page-tab");
+            const panels = document.querySelectorAll(".page-panel");
+
+            function setActivePage(pageName) {
+                panels.forEach((panel) => {
+                    const isTarget = panel.getAttribute("data-page-content") === pageName;
+                    panel.classList.toggle("hidden", !isTarget);
+                });
+
+                tabs.forEach((tab) => {
+                    const isTarget = tab.getAttribute("data-page") === pageName;
+                    tab.classList.toggle("bg-cvNavy", isTarget);
+                    tab.classList.toggle("text-white", isTarget);
+                    tab.classList.toggle("hover:bg-cvNavy/90", isTarget);
+                    tab.classList.toggle("hover:bg-white/50", !isTarget);
+                });
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    const pageName = tab.getAttribute("data-page");
+                    if (pageName) {
+                        setActivePage(pageName);
+                    }
+                });
+            });
+
+            setActivePage("about-me");
+        })();
+    </script>
+</body>
+</html>
