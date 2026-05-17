@@ -26,6 +26,16 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Page transitions and panel animation */
+        .page-panel {
+            animation: fadeIn 0.36s ease both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-[#d9dde2] font-sans text-cvText antialiased">
@@ -45,9 +55,26 @@
         <!-- PROFILE + TEXT -->
         <div class="flex flex-col items-center text-center sm:flex-row sm:text-left sm:items-center gap-4 lg:gap-5">
 
-            <!-- Avatar -->
-            <div class="h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 overflow-hidden rounded-2xl border border-white/10 bg-white/5 ring-1 ring-white/10 shadow-xl shrink-0">
-                <img src="profile/me.jpg" class="h-full w-full object-cover" alt="Profile">
+            <!-- Avatar (brand identity card with hover and ring) -->
+            <div class="group h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 overflow-hidden rounded-2xl shrink-0 shadow-xl transition-transform transform hover:scale-105">
+                <div class="h-full w-full overflow-hidden rounded-2xl bg-white/5 ring-2 ring-cvBlue/20 hover:ring-cvBlue/40 transition">
+                    <img src="profile/me.jpg" class="h-full w-full object-cover transform transition duration-500 group-hover:scale-105 group-hover:rotate-1" alt="Profile">
+                </div>
+        
+        <!-- HERO LAYER: brand-first statement -->
+        <section class="px-6 py-6 text-center lg:text-left lg:px-0 lg:py-0 w-full">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white/95">
+                I build modern, fast, and clean web experiences.
+            </h2>
+            <p class="mt-2 text-white/80 max-w-xl mx-auto lg:mx-0">
+                Frontend developer focused on UI/UX, performance, and interactive web apps.
+            </p>
+
+            <div class="mt-4 flex justify-center lg:justify-start gap-3">
+                <button id="viewProjectsBtn" class="px-5 py-2 rounded-xl bg-gradient-to-r from-cvBlue to-cvNavy text-white text-sm shadow hover:scale-[1.02] transition">View Projects</button>
+                <button id="contactBtn" class="px-5 py-2 rounded-xl border border-white/20 text-white text-sm hover:bg-white/5 transition">Contact</button>
+            </div>
+        </section>
             </div>
 
             <!-- Text -->
@@ -82,39 +109,22 @@
             </div>
         </div>
 
-        <!-- NAV -->
-        <nav class="grid grid-cols-2 sm:grid-cols-3 lg:w-[420px] gap-2 mt-2 lg:mt-0">
+            <!-- NAV (glass pills) -->
+        <nav class="grid grid-cols-2 sm:grid-cols-3 lg:w-[520px] gap-2 mt-2 lg:mt-0">
 
-            <button data-page="about-me"
-                class="page-tab rounded-xl bg-white px-3 py-2 text-xs font-medium text-slate-900 hover:scale-[1.02] transition">
-                About
-            </button>
+            <button data-page="about-me" class="page-tab nav-pill">About</button>
 
-            <button data-page="profile"
-                class="page-tab rounded-xl bg-white/5 px-3 py-2 text-xs font-medium text-white hover:bg-white/10 transition">
-                Profile
-            </button>
+            <button data-page="profile" class="page-tab nav-pill">Profile</button>
 
-            <button data-page="experience"
-                class="page-tab rounded-xl bg-white/5 px-3 py-2 text-xs font-medium text-white hover:bg-white/10 transition">
-                Experience
-            </button>
+            <button data-page="experience" class="page-tab nav-pill">Experience</button>
 
-            <button data-page="expertise"
-                class="page-tab rounded-xl bg-white/5 px-3 py-2 text-xs font-medium text-white hover:bg-white/10 transition">
-                Skills
-            </button>
+            <button data-page="expertise" class="page-tab nav-pill">Skills</button>
 
-            <button data-page="strengths"
-                class="page-tab rounded-xl bg-white/5 px-3 py-2 text-xs font-medium text-white hover:bg-white/10 transition">
-                Strengths
-            </button>
+            <button data-page="strengths" class="page-tab nav-pill">Strengths</button>
 
-            <a href="https://riosweb.tech"
-               class="rounded-xl bg-blue-500/20 px-3 py-2 text-center text-xs font-medium text-blue-200 hover:bg-blue-500/30 transition">
-               Portfolio
-            </a>
+            <button data-page="projects" class="page-tab nav-pill">Projects</button>
 
+            <a href="https://riosweb.tech" class="rounded-xl px-3 py-2 text-center text-xs font-medium text-blue-200 hover:bg-blue-500/30 transition hidden lg:inline-flex">Portfolio</a>
         </nav>
     </div>
 </header>
@@ -142,6 +152,7 @@
                                  <div class="flex items-start gap-2">
                                     <img src="svgs/web.svg" alt="Website" class="mt-0.5 h-4 w-4 shrink-0">
                                     <a href="https://riosweb.tech" target="_blank" rel="noopener" class="text-blue-500 underline">riosweb.tech</a>
+                                    <a href="https://elqtech.me" target="_blank" rel="noopener" class="ml-4 text-blue-500 underline">elqtech.me</a>     
                                 </div>
                             </div>
                         </section>
@@ -157,15 +168,15 @@
 
                         <section class="mb-6 space-y-3" id="skills">
                             <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Skills</h2>
-                            <ul class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
-                                <li>- Web Development</li>
-                                <li>- Front-End</li>
-                                <li>- HTML, CSS, JavaScript</li>
-                                <li>- Responsive Design</li>
-                                <li>- UI/UX Design</li>
-                                <li>- GitHub and API Integration</li>
-                                <li>- Problem Solving</li>
-                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">HTML</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">CSS</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">JavaScript</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">Responsive Design</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">UI/UX</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">GitHub</span>
+                                <span class="px-3 py-1 rounded-full bg-[#f1f6fb] text-sm text-cvNavy border border-cvNavy/10">API Integration</span>
+                            </div>
                         </section>
 
                         <section class="space-y-3">
@@ -196,6 +207,28 @@
                                     <li>Integrated modern web technologies and best practices for educational content delivery.</li>
                                     <li>Demonstrated front-end and UI/UX skills through project-based development.</li>
                                 </ul>
+                            </div>
+                        </article>
+
+                        <article class="page-panel hidden space-y-3" data-page-content="projects">
+                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Selected Projects</h2>
+                            <div class="h-px w-full bg-cvNavy/35"></div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <a href="#" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
+                                    <h3 class="font-semibold text-cvNavy">ClassRio — Educational Platform</h3>
+                                    <p class="mt-2 text-sm text-cvText/80">Built a responsive learning platform focused on usability and speed.</p>
+                                </a>
+                                <a href="#" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
+                                    <h3 class="font-semibold text-cvNavy">Portfolio Site</h3>
+                                    <p class="mt-2 text-sm text-cvText/80">A personal brand site with animations, accessibility, and performance optimizations.</p>
+                                </a>
+                                <div class="group rounded-xl border border-cyan-400/40 bg-gradient-to-br from-cyan-50 to-white p-4 shadow-lg shadow-cyan-100 transform transition hover:-translate-y-1">
+                                    <h3 class="font-semibold text-cvNavy">Electronics Engineering Animation</h3>
+                                    <p class="mt-2 text-sm text-cvText/80">All about Electronics Engineering Projects.</p>
+                                    <a href="electronics-engineering.html" class="mt-4 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-cyan-200 transition hover:scale-[1.02]">
+                                        Check out
+                                    </a>
+                                </div>
                             </div>
                         </article>
 
@@ -246,6 +279,13 @@
             const tabs = document.querySelectorAll(".page-tab");
             const panels = document.querySelectorAll(".page-panel");
 
+            const activeClasses = [
+                'bg-gradient-to-r', 'from-cvBlue', 'to-cvNavy', 'text-white', 'ring-2', 'ring-cvBlue/40', 'shadow-lg', 'scale-105'
+            ];
+            const inactiveClasses = [
+                'bg-white/5', 'text-white', 'hover:bg-white/10', 'shadow-sm', 'scale-100'
+            ];
+
             function setActivePage(pageName) {
                 panels.forEach((panel) => {
                     const isTarget = panel.getAttribute("data-page-content") === pageName;
@@ -254,23 +294,34 @@
 
                 tabs.forEach((tab) => {
                     const isTarget = tab.getAttribute("data-page") === pageName;
-                    tab.classList.toggle("bg-cvNavy", isTarget);
-                    tab.classList.toggle("text-white", isTarget);
-                    tab.classList.toggle("hover:bg-cvNavy/90", isTarget);
-                    tab.classList.toggle("hover:bg-white/50", !isTarget);
+                    if (isTarget) {
+                        tab.classList.remove(...inactiveClasses);
+                        tab.classList.add(...activeClasses);
+                    } else {
+                        tab.classList.remove(...activeClasses);
+                        tab.classList.add(...inactiveClasses);
+                    }
                 });
             }
 
             tabs.forEach((tab) => {
+                // initialize inactive look
+                tab.classList.add('rounded-xl', 'px-3', 'py-2', 'text-xs', 'font-medium', 'backdrop-blur-md', 'transition', 'duration-200');
+                tab.classList.add(...inactiveClasses);
+
                 tab.addEventListener("click", () => {
                     const pageName = tab.getAttribute("data-page");
-                    if (pageName) {
-                        setActivePage(pageName);
-                    }
+                    if (pageName) setActivePage(pageName);
                 });
             });
 
-            setActivePage("about-me");
+            // Hero buttons
+            const viewBtn = document.getElementById('viewProjectsBtn');
+            const contactBtn = document.getElementById('contactBtn');
+            if (viewBtn) viewBtn.addEventListener('click', () => setActivePage('projects'));
+            if (contactBtn) contactBtn.addEventListener('click', () => window.location = 'mailto:s.rvespadera@usm.edu.ph');
+
+            setActivePage('about-me');
         })();
     </script>
 </body>

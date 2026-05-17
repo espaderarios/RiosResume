@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronics Engineering Animation</title>
+    <script src="./tailwindcss.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cvNavy: "#2f4358",
+                        cvBlue: "#a7c4e7",
+                        cvPanel: "#e9edf1",
+                        cvText: "#1f2937"
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "Segoe UI", "Tahoma", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* Entrance animation for main content */
+        .animate-init {
+            opacity: 0;
+            transform: translateY(12px) scale(0.995);
+            transition: opacity 600ms cubic-bezier(.2,.9,.3,1), transform 600ms cubic-bezier(.2,.9,.3,1);
+        }
+        .animate-init.in {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        /* Fade-in helper for three renderer */
+        #three-root canvas { opacity: 0; transition: opacity 600ms cubic-bezier(.2,.9,.3,1); }
+        #three-root canvas.visible { opacity: 1; }
+    </style>
+</head>
+<body class="min-h-screen bg-[#050816] font-sans text-white overflow-hidden">
+    <main class="relative flex min-h-screen items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,200,0.15),transparent_60%)]"></div>
+
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(0,255,170,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,170,0.15)_1px,transparent_1px)] bg-[size:60px_60px] animate-pulse"></div>
+        </div>
+
+        <div class="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
+
+        <div id="mainContent" class="animate-init relative z-10 mx-auto max-w-5xl px-6 text-center">
+            <div class="relative mb-12 flex items-center justify-center">
+                <div class="absolute h-72 w-72 rounded-full border border-cyan-400/30 animate-spin [animation-duration:15s]"></div>
+                <div class="absolute h-56 w-56 rounded-full border border-emerald-400/40 animate-spin [animation-direction:reverse] [animation-duration:10s]"></div>
+
+                <div class="relative flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-emerald-400 shadow-[0_0_60px_rgba(0,255,200,0.6)] animate-pulse">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3v2.25m4.5-2.25v2.25M9 18.75v2.25m6-2.25v2.25M3 9.75h2.25m13.5 0H21M3 14.25h2.25m13.5 0H21M7.5 6.75h9A1.5 1.5 0 0118 8.25v7.5A1.5 1.5 0 0116.5 17.25h-9A1.5 1.5 0 016 15.75v-7.5A1.5 1.5 0 017.5 6.75z" />
+                    </svg>
+                </div>
+
+                <div class="absolute h-[420px] w-[420px] animate-spin [animation-duration:18s]">
+                    <div class="absolute top-0 left-1/2 h-5 w-5 -translate-x-1/2 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,1)]"></div>
+                    <div class="absolute bottom-0 left-1/2 h-5 w-5 -translate-x-1/2 rounded-full bg-emerald-400 shadow-[0_0_20px_rgba(16,185,129,1)]"></div>
+                    <div class="absolute left-0 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_20px_rgba(103,232,249,1)]"></div>
+                    <div class="absolute right-0 top-1/2 h-5 w-5 -translate-y-1/2 rounded-full bg-emerald-300 shadow-[0_0_20px_rgba(110,231,183,1)]"></div>
+                </div>
+            </div>
+
+            <h1 class="mb-6 bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-5xl font-black tracking-tight text-transparent animate-pulse md:text-7xl">
+                ELECTRONICS<br />ENGINEERING
+            </h1>
+
+            <p class="mx-auto max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl">
+                Designing intelligent systems, embedded technologies, and futuristic electronic innovations.
+            </p>
+
+            <div class="mt-16 flex flex-wrap items-center justify-center gap-6">
+                <div class="group relative overflow-hidden rounded-full border border-cyan-400/30 bg-white/5 px-5 py-3 backdrop-blur-xl">
+                    <span class="relative z-10 text-sm tracking-wide text-cyan-100">Microcontrollers</span>
+                    <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-700 group-hover:translate-x-0"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-full border border-cyan-400/30 bg-white/5 px-5 py-3 backdrop-blur-xl">
+                    <span class="relative z-10 text-sm tracking-wide text-cyan-100">Embedded Systems</span>
+                    <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-700 group-hover:translate-x-0"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-full border border-cyan-400/30 bg-white/5 px-5 py-3 backdrop-blur-xl">
+                    <span class="relative z-10 text-sm tracking-wide text-cyan-100">Circuit Design</span>
+                    <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-700 group-hover:translate-x-0"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-full border border-cyan-400/30 bg-white/5 px-5 py-3 backdrop-blur-xl">
+                    <span class="relative z-10 text-sm tracking-wide text-cyan-100">IoT</span>
+                    <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-700 group-hover:translate-x-0"></div>
+                </div>
+                <div class="group relative overflow-hidden rounded-full border border-cyan-400/30 bg-white/5 px-5 py-3 backdrop-blur-xl">
+                    <span class="relative z-10 text-sm tracking-wide text-cyan-100">Signal Processing</span>
+                    <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transition-transform duration-700 group-hover:translate-x-0"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="particles" class="pointer-events-none absolute inset-0 overflow-hidden"></div>
+        <!-- Three.js renderer mounts here -->
+        <div id="three-root" class="pointer-events-none absolute inset-0"></div>
+    </main>
+
+    <script>
+        (function () {
+            const particles = document.getElementById('particles');
+            const values = ['1010', '0101'];
+
+            Array.from({ length: 20 }).forEach((_, index) => {
+                const particle = document.createElement('div');
+                particle.className = 'absolute animate-bounce text-xs text-cyan-400/30';
+                particle.style.top = `${(index * 13) % 100}%`;
+                particle.style.left = `${(index * 29) % 100}%`;
+                particle.style.animationDuration = `${3 + (index % 5)}s`;
+                particle.style.animationDelay = `${(index % 4) * 0.4}s`;
+                particle.textContent = values[index % 2];
+                particles.appendChild(particle);
+            });
+                // ensure main content animates in even if GLB doesn't load
+                document.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(() => {
+                        const el = document.getElementById('mainContent');
+                        if (el && !el.classList.contains('in')) el.classList.add('in');
+                    }, 120);
+                });
+        })();
+    </script>
+
+    <script type="module">
+        // Load three and GLTFLoader from CDN and animate detected propellers
+        import * as THREE from 'https://unpkg.com/three@0.155.0/build/three.module.js';
+        import { GLTFLoader } from 'https://unpkg.com/three@0.155.0/examples/jsm/loaders/GLTFLoader.js';
+
+        const container = document.getElementById('three-root');
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(0, 2, 6);
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.domElement.style.position = 'absolute';
+        renderer.domElement.style.inset = '0';
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
+        renderer.domElement.classList.add('pointer-events-none');
+        // start hidden, will fade in when model is ready
+        renderer.domElement.style.opacity = '0';
+        container.appendChild(renderer.domElement);
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        // lighting
+        const hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+        scene.add(hemi);
+        const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+        dir.position.set(5, 10, 7);
+        scene.add(dir);
+
+        // load GLB
+        const loader = new GLTFLoader();
+        const modelUrl = './3D/Drone.glb';
+
+        const propellers = [];
+        const mixers = [];
+
+        loader.load(modelUrl, (gltf) => {
+            const model = gltf.scene;
+            // scale/center if necessary
+            model.position.set(0, 0.2, 0);
+            scene.add(model);
+
+            // Try to detect propeller meshes by name first
+            model.traverse((node) => {
+                if (node.isMesh) {
+                    const name = node.name || '';
+                    if (/prop|propeller|rotor|blade/i.test(name)) {
+                        propellers.push(node);
+                    }
+                }
+            });
+
+            // If none found, find small meshes far from center as candidates
+            if (propellers.length === 0) {
+                const bbox = new THREE.Box3().setFromObject(model);
+                const size = new THREE.Vector3();
+                bbox.getSize(size);
+                const diag = size.length();
+
+                model.traverse((node) => {
+                    if (node.isMesh) {
+                        const b = new THREE.Box3().setFromObject(node);
+                        const s = new THREE.Vector3();
+                        b.getSize(s);
+                        const maxDim = Math.max(s.x, s.y, s.z);
+                        const center = new THREE.Vector3();
+                        b.getCenter(center);
+                        const dist = center.length();
+                        // candidate: much smaller than model and some distance from center
+                        if (maxDim < diag * 0.25 && dist > diag * 0.25) {
+                            propellers.push(node);
+                        }
+                    }
+                });
+            }
+
+            console.log('Detected propellers:', propellers.map(p => p.name || p.id));
+
+            // Fade the renderer canvas in and animate main content
+            try {
+                renderer.domElement.classList.add('visible');
+            } catch (e) { /* ignore */ }
+            const mainEl = document.getElementById('mainContent');
+            if (mainEl) setTimeout(() => mainEl.classList.add('in'), 80);
+
+            // For each propeller, create a pivot so we can rotate around its local center
+            propellers.forEach((prop) => {
+                // compute world position of prop center
+                const worldPos = new THREE.Vector3();
+                prop.getWorldPosition(worldPos);
+
+                const pivot = new THREE.Object3D();
+                scene.add(pivot);
+                pivot.position.copy(worldPos);
+
+                // move prop to pivot (reparent) while preserving world transform
+                const propParent = prop.parent;
+                const propWorldQuat = new THREE.Quaternion();
+                prop.getWorldQuaternion(propWorldQuat);
+                const propWorldScale = new THREE.Vector3();
+                prop.getWorldScale(propWorldScale);
+
+                // detach prop
+                THREE.SceneUtils && console.warn('SceneUtils not available; attempting manual reparenting');
+                // compute local position relative to pivot
+                const invPivotMat = new THREE.Matrix4().getInverse(pivot.matrixWorld);
+                prop.applyMatrix4(invPivotMat);
+                pivot.add(prop);
+
+                // store pivot for rotation
+                mixers.push({ pivot, speed: (Math.random() * 2 + 6) * (Math.random() > 0.5 ? 1 : -1) });
+            });
+        }, undefined, (err) => console.error('GLTF load error', err));
+
+        // animation loop
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta();
+
+            mixers.forEach((m) => {
+                m.pivot.rotation.y += m.speed * delta;
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
