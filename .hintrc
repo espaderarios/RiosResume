@@ -3,14 +3,8 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": [
-      "default",
-      {
-        "ignore": [
-          "min-height: auto"
-        ]
-      }
-    ],
-    "disown-opener": "off"
+    "compat-api/css": "off",
+    "disown-opener": "off",
+    "meta-viewport": "off"
   }
 }
