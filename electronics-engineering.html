@@ -94,6 +94,26 @@
 
       background-size: 60px 60px;
     }
+
+    .tab-button {
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tab-button.is-active {
+      background: rgba(34, 211, 238, 0.18);
+      border-color: rgba(103, 232, 249, 0.7);
+      color: #ecfeff;
+      box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.15), 0 12px 40px rgba(8, 145, 178, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.is-active {
+      display: block;
+    }
   </style>
 </head>
 
@@ -181,32 +201,98 @@
       </div>
 
       <!-- Tech Tags -->
-      <div class="mt-16 flex flex-wrap items-center justify-center gap-5">
+      <div class="mt-16 grid w-full max-w-5xl grid-cols-2 gap-5 md:grid-cols-3">
 
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          Microcontrollers
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="microcontrollers">Microcontrollers</button>
+
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="embedded">Embedded Systems</button>
+
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="circuit">Circuit Design</button>
+
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="robotics">Robotics</button>
+
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="iot">IoT Systems</button>
+
+        <button type="button" class="tab-button glass w-full rounded-full px-6 py-3 text-sm font-semibold text-cyan-100 hover:scale-105 hover:border-cyan-400/40" data-tab="signal">Signal Processing</button>
+
+      </div>
+
+      <div class="mx-auto mt-8 max-w-4xl">
+        <div class="glass rounded-3xl border border-cyan-400/20 p-6 text-left shadow-2xl shadow-cyan-500/10 md:p-8">
+
+          <div class="tab-panel is-active" data-panel="microcontrollers">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">Microcontrollers</h2>
+            <p class="mb-4 text-slate-300">
+              A microcontroller is a compact computer on a single chip that controls electronic devices.
+              It combines a CPU, memory, and input/output peripherals, making it ideal for embedded control tasks.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> Arduino Uno, ESP32, PIC16F877A, STM32 Blue Pill, ATmega328P</p>
+              <p><span class="font-semibold text-cyan-200">Common uses:</span> robots, sensors, home automation, motor control, smart appliances</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="embedded">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">Embedded Systems</h2>
+            <p class="mb-4 text-slate-300">
+              Embedded systems are dedicated computing systems built into a larger device to perform a specific function.
+              They often work in real time and are optimized for power, size, and reliability.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> smart TVs, washing machines, traffic lights, drones, automotive ECUs</p>
+              <p><span class="font-semibold text-cyan-200">Core idea:</span> hardware and software are tightly integrated for one purpose</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="circuit">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">Circuit Design</h2>
+            <p class="mb-4 text-slate-300">
+              Circuit design is the process of planning and connecting electronic components so a circuit performs a desired task.
+              It includes analog, digital, and mixed-signal design.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> power supplies, amplifiers, filters, oscillators, sensor interfaces</p>
+              <p><span class="font-semibold text-cyan-200">Tools:</span> KiCad, Altium Designer, LTspice, Proteus</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="robotics">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">Robotics</h2>
+            <p class="mb-4 text-slate-300">
+              Robotics combines electronics, mechanics, and software to build machines that can sense, decide, and act.
+              It is used in automation, exploration, and intelligent assistance.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> line-following robots, robotic arms, drones, AGVs, humanoid robots</p>
+              <p><span class="font-semibold text-cyan-200">Skills involved:</span> control systems, sensors, actuators, motion planning</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="iot">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">IoT Systems</h2>
+            <p class="mb-4 text-slate-300">
+              IoT systems connect physical devices to the internet so they can share data and be monitored or controlled remotely.
+              They are common in smart homes, industry, and agriculture.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> smart thermostats, weather stations, asset trackers, smart lighting</p>
+              <p><span class="font-semibold text-cyan-200">Connectivity:</span> Wi-Fi, Bluetooth, Zigbee, LoRa, cellular</p>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="signal">
+            <h2 class="mb-3 text-2xl font-bold text-cyan-100">Signal Processing</h2>
+            <p class="mb-4 text-slate-300">
+              Signal processing studies how to analyze, filter, transform, and interpret signals such as audio, images, and sensor data.
+              It helps reduce noise and extract useful information.
+            </p>
+            <div class="space-y-2 text-slate-200">
+              <p><span class="font-semibold text-cyan-200">Examples:</span> noise filtering, speech recognition, image enhancement, ECG analysis</p>
+              <p><span class="font-semibold text-cyan-200">Common methods:</span> FFT, filtering, sampling, compression</p>
+            </div>
+          </div>
+
         </div>
-
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          Embedded Systems
-        </div>
-
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          Circuit Design
-        </div>
-
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          Robotics
-        </div>
-
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          IoT Systems
-        </div>
-
-        <div class="glass rounded-full px-6 py-3 transition duration-300 hover:scale-105 hover:border-cyan-400/40">
-          Signal Processing
-        </div>
-
       </div>
 
     </section>
@@ -215,6 +301,8 @@
 
   <script>
     const particlesContainer = document.getElementById("particles");
+    const tabButtons = Array.from(document.querySelectorAll("[data-tab]"));
+    const tabPanels = Array.from(document.querySelectorAll("[data-panel]"));
 
     const values = ["1010", "0101", "1100", "0011"];
 
@@ -239,6 +327,24 @@
 
       particlesContainer.appendChild(particle);
     }
+
+    function setActiveTab(tabName) {
+      tabButtons.forEach((button) => {
+        const isActive = button.dataset.tab === tabName;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      tabPanels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.panel === tabName);
+      });
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => setActiveTab(button.dataset.tab));
+    });
+
+    setActiveTab("microcontrollers");
   </script>
 
 </body>
