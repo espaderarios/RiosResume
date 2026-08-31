@@ -1,491 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosario V. Espadera - Resume</title>
-    <script src="./tailwindcss.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                            cvNavy: "#000000",
-                            cvBlue: "#2563eb",
-                            cvPanel: "#ffffff",
-                            cvText: "#2f2f2f",
-                            cvAccent: "#00c2ff",
-                            cvGreen: "#39ff14"
-                        },
-                    fontFamily: {
-                        sans: ["Poppins", "Segoe UI", "Tahoma", "sans-serif"]
-                    }
-                }
-            }
-        };
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body {
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        body {
-            background-image: url('gif/background.gif');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                background-attachment: scroll;
-                background-position: center top;
-            }
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Page transitions and panel animation */
-        .page-panel {
-            animation: fadeIn 0.36s ease both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .app-preview {
-            aspect-ratio: 16 / 9;
-            width: 100%;
-            border-radius: 1rem;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: #f5f7fb;
-            margin-bottom: 0.9rem;
-        }
-
-        .app-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.35s ease;
-        }
-
-        .group:hover .app-preview img {
-            transform: scale(1.06);
-        }
-    
-.nav-pill{
-    backdrop-filter:blur(12px);
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    color:#fff;
-    transition:.3s;
-}
-.nav-pill:hover{
-    background:rgba(255,255,255,.15);
-    transform:translateY(-2px);
-}
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:linear-gradient(135deg,rgba(0,0,0,.55),rgba(0,0,0,.35));
-    z-index:0;
-}
-.project-card:hover{
-    transform:translateY(-6px);
-}
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1f2029">
+<title>Rosario V. Espadera — Resume</title>
+<script src="./tailwindcss.js"></script>
+<style>
+:root{--bg:#1e1f27;--panel:#272832;--panel2:#2d2e39;--muted:#a4a5ae;--text:#f5f5f7;--accent:#f4c84b;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 75% 0%,rgba(244,200,75,.06),transparent 30%),var(--bg);color:var(--text);font-family:Poppins,"Segoe UI",Tahoma,sans-serif}button,a{font:inherit}a{text-decoration:none;color:inherit}.app-shell{display:flex;min-height:100vh}.sidebar{position:fixed;z-index:50;left:0;top:0;bottom:0;width:270px;background:rgba(29,30,38,.97);border-right:1px solid var(--line);padding:28px 22px;display:flex;flex-direction:column;overflow-y:auto}.profile{text-align:center;padding-bottom:24px;border-bottom:1px solid var(--line)}.avatar{width:92px;height:92px;margin:0 auto 14px;border-radius:50%;object-fit:cover;border:3px solid rgba(244,200,75,.8);box-shadow:0 0 0 7px rgba(244,200,75,.06)}.online{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px #292a33;vertical-align:middle;margin-left:-17px;position:relative;top:33px}.profile h1{font-size:17px;margin:0 0 4px;font-weight:700}.profile p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.side-section{padding:20px 0;border-bottom:1px solid var(--line)}.side-title{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:#ddd;font-weight:700;margin-bottom:14px}.side-row{display:flex;justify-content:space-between;gap:12px;font-size:12px;margin:10px 0}.side-row span:first-child{font-weight:600;color:#eee}.side-row span:last-child{color:var(--muted);text-align:right}.skill{margin:15px 0}.skill-head{display:flex;justify-content:space-between;font-size:11px;margin-bottom:7px}.skill-head span:last-child{color:var(--muted)}.bar{height:4px;background:#3a3b45;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}.side-links{display:grid;gap:6px}.side-link{padding:10px 12px;border-radius:8px;color:#bdbec7;font-size:12px;display:flex;align-items:center;gap:10px;transition:.2s}.side-link:hover,.side-link.active{background:rgba(244,200,75,.1);color:#fff}.side-link.active{box-shadow:inset 3px 0 var(--accent)}.side-footer{margin-top:auto;padding-top:18px;color:#777;font-size:10px;text-align:center}.main{margin-left:270px;width:calc(100% - 270px);padding:30px;max-width:1500px}.mobile-top{display:none}.hero{position:relative;min-height:310px;border-radius:4px;overflow:hidden;background-image:linear-gradient(90deg,rgba(25,26,34,.97) 0%,rgba(25,26,34,.82) 46%,rgba(25,26,34,.28) 100%),url('gif/background.gif');background-size:cover;background-position:center;display:flex;align-items:center;padding:44px}.hero-copy{max-width:650px;position:relative;z-index:2}.eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}.hero h2{font-size:clamp(34px,4.5vw,62px);line-height:.98;margin:12px 0 18px;letter-spacing:-.045em;font-weight:800}.hero p{max-width:620px;color:#c4c5cc;font-size:14px;line-height:1.75;margin:0}.hero-actions{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}.btn{border:0;border-radius:3px;padding:12px 20px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}.btn-primary{background:var(--accent);color:#17181e}.btn-secondary{background:rgba(255,255,255,.07);border:1px solid var(--line);color:#fff}.btn:hover{transform:translateY(-2px)}.hero-photo{position:absolute;right:5%;bottom:0;width:min(330px,35%);height:92%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 25px rgba(0,0,0,.3));opacity:.94}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:22px 0}.stat{display:flex;align-items:baseline;gap:7px}.stat strong{font-size:25px;color:var(--accent);font-weight:800}.stat span{font-size:11px;color:#ddd}.section-head{display:flex;align-items:end;justify-content:space-between;margin:14px 0 14px}.section-head h2{font-size:14px;margin:0;text-transform:uppercase;letter-spacing:.13em}.section-head p{font-size:11px;color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;min-height:190px;transition:.22s;position:relative;overflow:hidden}.card:hover{transform:translateY(-5px);border-color:rgba(244,200,75,.35);box-shadow:0 16px 30px rgba(0,0,0,.18)}.card-icon{width:36px;height:36px;border-radius:8px;background:rgba(244,200,75,.1);color:var(--accent);display:grid;place-items:center;font-weight:800;margin-bottom:18px}.card h3{font-size:13px;margin:0 0 9px}.card p{font-size:11px;line-height:1.75;color:var(--muted);margin:0}.card-link{display:inline-block;margin-top:18px;color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.project{background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.2s}.project:hover{transform:translateY(-5px);border-color:rgba(244,200,75,.35)}.project-img{aspect-ratio:16/9;overflow:hidden;background:#191a20}.project-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}.project:hover .project-img img{transform:scale(1.05)}.project-body{padding:17px}.project-body h3{font-size:13px;margin:0 0 7px}.project-body p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.tag{font-size:9px;color:#ddd;border:1px solid var(--line);padding:4px 7px;border-radius:999px}.panel{background:var(--panel);border:1px solid var(--line);padding:25px}.content-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}.timeline{position:relative;padding-left:22px}.timeline:before{content:"";position:absolute;left:3px;top:4px;bottom:4px;width:1px;background:#454650}.timeline-item{position:relative;margin-bottom:22px}.timeline-item:before{content:"";position:absolute;left:-23px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px #272832}.timeline-item h3{font-size:13px;margin:0}.timeline-item .meta{font-size:10px;color:var(--accent);margin:5px 0 8px}.timeline-item p,.panel li{font-size:11px;color:var(--muted);line-height:1.7}.panel h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 18px}.contact-list{display:grid;gap:14px}.contact-item small{display:block;color:var(--accent);font-size:9px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:3px}.contact-item span,.contact-item a{font-size:11px;color:#ddd;word-break:break-word}.hidden{display:none!important}.reveal{animation:fade .35s ease both}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@media(max-width:1050px){.cards,.projects{grid-template-columns:repeat(2,1fr)}.hero-photo{opacity:.45}.content-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.25s;width:280px}.sidebar.open{transform:translateX(0)}.main{margin-left:0;width:100%;padding:14px}.mobile-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.menu-btn{background:var(--panel);border:1px solid var(--line);color:#fff;width:42px;height:42px;border-radius:8px;cursor:pointer}.mobile-brand{font-size:13px;font-weight:800;letter-spacing:.08em}.hero{min-height:390px;padding:30px 24px}.hero h2{font-size:39px}.hero-photo{width:55%;right:-7%;opacity:.32}.stats{gap:12px}.stat strong{font-size:21px}.stat span{font-size:10px}.cards,.projects{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:5px}.overlay{display:none}.sidebar.open~.overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40}}
 </style>
 </head>
-<body class="bg-white font-sans text-cvText antialiased">
-<nav class="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
-    <div class="max-w-[1120px] mx-auto px-4 py-3 flex items-center justify-center">
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="profile">
+    <img class="avatar" src="profile/me.jpg" alt="Rosario Espadera">
+    <span class="online"></span>
+    <h1>Rosario V. Espadera</h1>
+    <p>Front-End Developer<br>UI/UX Designer · Web Apps</p>
+  </div>
+  <div class="side-section">
+    <div class="side-title">Quick Info</div>
+    <div class="side-row"><span>Education</span><span>USM</span></div>
+    <div class="side-row"><span>Location</span><span>North Cotabato</span></div>
+    <div class="side-row"><span>Focus</span><span>Web Development</span></div>
+  </div>
+  <div class="side-section">
+    <div class="side-title">Core Skills</div>
+    <div class="skill"><div class="skill-head"><span>HTML / CSS</span><span>Expertise</span></div><div class="bar"><i style="width:92%"></i></div></div>
+    <div class="skill"><div class="skill-head"><span>JavaScript</span><span>Strong</span></div><div class="bar"><i style="width:84%"></i></div></div>
+    <div class="skill"><div class="skill-head"><span>UI / UX</span><span>Strong</span></div><div class="bar"><i style="width:88%"></i></div></div>
+    <div class="skill"><div class="skill-head"><span>API Integration</span><span>Strong</span></div><div class="bar"><i style="width:78%"></i></div></div>
+  </div>
+  <nav class="side-section side-links" aria-label="Main navigation">
+    <button class="side-link active" data-view="home">⌂ <span>Home</span></button>
+    <button class="side-link" data-view="profile">◉ <span>Profile</span></button>
+    <button class="side-link" data-view="experience">▣ <span>Experience</span></button>
+    <button class="side-link" data-view="skills">◆ <span>Skills</span></button>
+    <button class="side-link" data-view="projects">▤ <span>Projects</span></button>
+    <button class="side-link" data-view="contact">✉ <span>Contact</span></button>
+  </nav>
+  <div class="side-footer">© 2026 Rosario V. Espadera</div>
+</aside>
+<div class="overlay" id="overlay"></div>
+<main class="main">
+  <div class="mobile-top"><div class="mobile-brand">RIOS · RESUME</div><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button></div>
 
-        <div class="flex items-center gap-1 rounded-xl bg-slate-100 p-1">
-
-            <button
-                data-page="about-me"
-                class="top-tab px-5 py-2 rounded-lg text-sm font-medium bg-white shadow-sm">
-                Resume
-            </button>
-
-            <button
-                data-page="webapps"
-                class="top-tab px-5 py-2 rounded-lg text-sm font-medium hover:bg-white/80 transition">
-                WebApps
-            </button>
-
-        </div>
-
+  <section class="view reveal" data-view-content="home">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Web Developer · UI/UX · Web Apps</div>
+        <h2>Building modern digital experiences.</h2>
+        <p>I create clean, functional, and user-friendly web applications with a focus on responsive interfaces, practical solutions, and continuous improvement.</p>
+        <div class="hero-actions"><button class="btn btn-primary" data-go="projects">Explore Projects</button><button class="btn btn-secondary" data-go="contact">Contact Me</button></div>
+      </div>
+      <img class="hero-photo" src="profile/me.jpg" alt="">
+    </header>
+    <div class="stats">
+      <div class="stat"><strong>3+</strong><span>Years learning & building</span></div>
+      <div class="stat"><strong>5</strong><span>Featured projects</span></div>
+      <div class="stat"><strong>7+</strong><span>Core technologies</span></div>
+      <div class="stat"><strong>∞</strong><span>Ideas to build</span></div>
     </div>
-</nav>
-    <main class="min-h-screen w-full p-3 sm:p-5 lg:p-8">
-        <section id="resumeSection" class="mx-auto w-full max-w-[1200px] rounded-[32px] bg-white/95 backdrop-blur-xl p-4 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
-            <div class="relative">
-<header class="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-slate-950 via-blue-900 to-slate-950 shadow-[0_20px_60px_rgba(37,99,235,.35)] px-4 py-5 sm:px-6 lg:px-8 lg:py-6 lg:min-h-[150px]">
-
-    <!-- background glow -->
-    <div class="pointer-events-none absolute inset-0 opacity-20">
-        <div class="absolute -left-10 top-0 h-32 w-32 rounded-full bg-cvAccent/80 sm:h-40 sm:w-40"></div>
-        <div class="absolute right-0 top-10 h-36 w-36 rounded-full bg-cvGreen/70 sm:h-44 sm:w-44"></div>
+    <div class="section-head"><h2>What I Do</h2><p>Designing and developing practical digital products.</p></div>
+    <div class="cards">
+      <article class="card"><div class="card-icon">&lt;/&gt;</div><h3>Web Development</h3><p>Responsive websites and web applications built with clean front-end structure and attention to usability.</p><a class="card-link" href="#" data-go="projects">View work →</a></article>
+      <article class="card"><div class="card-icon">UI</div><h3>UI / UX Design</h3><p>Interfaces designed around clarity, visual hierarchy, accessible interactions, and a consistent user experience.</p><a class="card-link" href="#" data-go="skills">My skills →</a></article>
+      <article class="card"><div class="card-icon">API</div><h3>Interactive Web Apps</h3><p>Client-side systems, API integrations, tools, and experimental applications that turn ideas into usable products.</p><a class="card-link" href="#" data-go="projects">Explore apps →</a></article>
     </div>
+  </section>
 
-    <div class="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+  <section class="view hidden reveal" data-view-content="profile">
+    <div class="section-head"><h2>Profile</h2><p>A little about me.</p></div>
+    <div class="content-grid"><article class="panel"><h2>About Me</h2><p style="font-size:13px;line-height:1.9;color:#bfc0c8">I am a passionate and self-motivated Web Developer who enjoys creating modern, functional, and user-friendly web applications. I have skills in front-end development and interface design, and I like turning ideas into practical digital solutions.</p><p style="font-size:13px;line-height:1.9;color:#bfc0c8">Through personal and experimental projects, I have developed my creativity, problem-solving skills, and ability to keep learning new things. I am dedicated to improving my technical skills, adapting to new technologies, and delivering quality work.</p></article><aside class="panel"><h2>Education</h2><div class="contact-list"><div class="contact-item"><small>University</small><span>University of Southern Mindanao</span></div><div class="contact-item"><small>Location</small><span>Kabacan, North Cotabato, Philippines</span></div><div class="contact-item"><small>Period</small><span>2023 — Present</span></div></div></aside></div>
+  </section>
 
-        <!-- PROFILE + TEXT -->
-        <div class="flex flex-col items-center text-center sm:flex-row sm:text-left sm:items-center gap-4 lg:gap-5">
+  <section class="view hidden reveal" data-view-content="experience">
+    <div class="section-head"><h2>Experience</h2><p>Project-based development.</p></div>
+    <article class="panel"><div class="timeline"><div class="timeline-item"><h3>Web Developer</h3><div class="meta">PROJECT-BASED · CURRENT</div><p>Developed and launched classrio.me, an educational website for students and teachers.</p><p>Implemented responsive design principles across mobile, tablet, and desktop, and integrated modern web technologies for educational content delivery.</p></div><div class="timeline-item"><h3>Front-End & UI/UX Development</h3><div class="meta">PERSONAL / EXPERIMENTAL PROJECTS</div><p>Built interactive websites and interfaces while continuously improving visual design, usability, debugging, and implementation skills.</p></div></div></article>
+  </section>
 
-            <!-- Avatar (brand identity card with hover and ring) -->
-            <div class="group h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 overflow-hidden rounded-2xl shrink-0 shadow-xl transition-transform transform hover:scale-105">
-                <div class="h-full w-full overflow-hidden rounded-2xl bg-white/10 ring-2 ring-cvAccent/30 hover:ring-cvAccent/60 transition">
-                    <img src="profile/me.jpg" class="h-full w-full object-cover transform transition duration-500 group-hover:scale-105 group-hover:rotate-1" alt="Profile">
-                </div>
-        
-        <!-- HERO LAYER: brand-first statement -->
-        <section class="px-6 py-6 text-center lg:text-left lg:px-0 lg:py-0 w-full">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                I build modern, fast, and clean web experiences.
-            </h2>
-            <p class="mt-2 text-white/80 max-w-xl mx-auto lg:mx-0">
-                Frontend developer focused on UI/UX, performance, and interactive web apps.
-            </p>
-
-            <div class="mt-4 flex justify-center lg:justify-start gap-3">
-                <button id="viewProjectsBtn" class="px-5 py-2 rounded-xl bg-gradient-to-r from-cvBlue to-cvAccent text-white text-sm shadow hover:scale-[1.02] transition">View Projects</button>
-                <button id="contactBtn" class="px-5 py-2 rounded-xl border border-white/20 text-white text-sm hover:bg-white/10 transition">Contact</button>
-            </div>
-        </section>
-            </div>
-
-            <!-- Text -->
-            <div class="space-y-1">
-                    <p class="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-white/70">
-                    Web Developer
-                </p>
-
-                <h1 class="text-lg sm:text-2xl lg:text-4xl font-semibold tracking-tight text-white">
-                    ROSARIO V. ESPADERA
-                </h1>
-
-                <p class="text-xs sm:text-sm text-white/70">
-                    Front-End Developer | UI/UX | Web Apps
-                </p>
-
-                <!-- badges (mobile optimized) -->
-                <div class="mt-2 flex flex-wrap justify-center sm:justify-start gap-1.5 sm:gap-2">
-                    <span class="rounded-full border border-white/10 bg-white/10 px-2 py-1 text-[10px] sm:text-xs text-white">
-                        HTML
-                    </span>
-                    <span class="rounded-full border border-white/10 bg-white/10 px-2 py-1 text-[10px] sm:text-xs text-white">
-                        CSS
-                    </span>
-                    <span class="rounded-full border border-white/10 bg-white/10 px-2 py-1 text-[10px] sm:text-xs text-white">
-                        JavaScript
-                    </span>
-                    <span class="rounded-full border border-white/10 bg-white/10 px-2 py-1 text-[10px] sm:text-xs text-white">
-                        UI Design
-                    </span>
-                </div>
-            </div>
-        </div>
-
-            <!-- NAV (glass pills) -->
-        <nav class="grid grid-cols-2 sm:grid-cols-3 lg:w-[520px] gap-2 mt-2 lg:mt-0">
-
-            <button data-page="about-me" class="page-tab nav-pill">About</button>
-
-            <button data-page="profile" class="page-tab nav-pill">Profile</button>
-
-            <button data-page="experience" class="page-tab nav-pill">Experience</button>
-
-            <button data-page="expertise" class="page-tab nav-pill">Skills</button>
-
-            <button data-page="strengths" class="page-tab nav-pill">Strengths</button>
-
-            <button type="button" onclick="window.open('https://espaderarios.github.io/Resume/', '_blank', 'noopener')" class="page-tab nav-pill">Portfolio</button>
-        </nav>
+  <section class="view hidden reveal" data-view-content="skills">
+    <div class="section-head"><h2>Technical Expertise</h2><p>Tools and capabilities.</p></div>
+    <div class="cards">
+      <article class="card"><div class="card-icon">01</div><h3>Languages</h3><p>HTML, CSS, JavaScript</p><div class="tags"><span class="tag">Semantic HTML</span><span class="tag">Responsive CSS</span><span class="tag">JS</span></div></article>
+      <article class="card"><div class="card-icon">02</div><h3>Development</h3><p>Web development, front-end development, responsive design, and API integration.</p><div class="tags"><span class="tag">Responsive</span><span class="tag">APIs</span><span class="tag">GitHub</span></div></article>
+      <article class="card"><div class="card-icon">03</div><h3>Design</h3><p>UI/UX design, interface design, visual hierarchy, and practical user-focused layouts.</p><div class="tags"><span class="tag">UI/UX</span><span class="tag">Interaction</span><span class="tag">Accessibility</span></div></article>
     </div>
-</header>
+  </section>
 
-                <div class="mt-4 grid grid-cols-1 gap-0 lg:mt-6">
+  <section class="view hidden reveal" data-view-content="projects">
+    <div class="section-head"><h2>Featured Projects</h2><p>Selected web applications and sites.</p></div>
+    <div class="projects">
+      <a class="project" href="https://riosweb.tech" target="_blank" rel="noopener"><div class="project-img"><img src="previews/riosweb.tech.png" alt="RiosWeb.Tech preview"></div><div class="project-body"><h3>RiosWeb.Tech</h3><p>Personal portfolio and published projects.</p><div class="tags"><span class="tag">Portfolio</span><span class="tag">Web</span></div></div></a>
+      <a class="project" href="https://classrio.me" target="_blank" rel="noopener"><div class="project-img"><img src="previews/classrio.me.png" alt="ClassRio preview"></div><div class="project-body"><h3>ClassRio</h3><p>Educational platform project for students and teachers.</p><div class="tags"><span class="tag">Education</span><span class="tag">Web App</span></div></div></a>
+      <a class="project" href="https://elqtech.me" target="_blank" rel="noopener"><div class="project-img"><img src="previews/elqtech.me.png" alt="ElqTech preview"></div><div class="project-body"><h3>ElqTech</h3><p>Experimental web tools and utilities.</p><div class="tags"><span class="tag">Tools</span><span class="tag">Experimental</span></div></div></a>
+      <a class="project" href="electronics-engineering.html"><div class="project-img"><img src="gif/drone.gif" alt="Electronics Engineering preview"></div><div class="project-body"><h3>Electronics Engineering</h3><p>Site section with electronics projects and content.</p><div class="tags"><span class="tag">Engineering</span><span class="tag">Projects</span></div></div></a>
+      <a class="project" href="https://espaderarios.github.io/JC_foods/" target="_blank" rel="noopener"><div class="project-img"><img src="previews/jcfoods.png" alt="JC Foods preview"></div><div class="project-body"><h3>JC Foods</h3><p>Website for a local food business.</p><div class="tags"><span class="tag">Business</span><span class="tag">Website</span></div></div></a>
+    </div>
+  </section>
 
-                    <section class="bg-white px-5 py-6 sm:px-7 sm:py-8 lg:px-8 lg:py-10">
-                        <section id="pageContainer" class="min-h-[46vh] sm:min-h-[52vh] lg:min-h-[56vh]">
-                            <article class="page-panel hidden space-y-3" data-page-content="about-me">
-                                                        <section class="mb-6 space-y-3">
-                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Contact</h2>
-                            <div class="space-y-2 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
-                                <div class="flex items-start gap-2">
-                                    <img src="svgs/email.svg" alt="Email" class="mt-0.5 h-4 w-4 shrink-0">
-                                    <span class="break-all">s.rvespadera@usm.edu.ph</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <img src="svgs/phone.svg" alt="Phone" class="mt-0.5 h-4 w-4 shrink-0">
-                                    <span>09641310220</span>
-                                </div>
-                                <div class="flex items-start gap-2">
-                                    <img src="svgs/location.svg" alt="Location" class="mt-0.5 h-4 w-4 shrink-0">
-                                    <span>Sudapin, Kidapawan City, North Cotabato</span>
-                                </div>
-                                 <div class="flex items-start gap-2">
-                                    <img src="svgs/web.svg" alt="Website" class="mt-0.5 h-4 w-4 shrink-0">
-                                    <a href="https://riosweb.tech" target="_blank" rel="noopener" class="text-cvNavy underline">riosweb.tech</a>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="mb-6 space-y-3">
-                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Education</h2>
-                            <div class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
-                                <p class="font-semibold">University of Southern Mindanao</p>
-                                <p>Kabacan, North Cotabato, Philippines</p>
-                                <p>2023 - Present</p>
-                            </div>
-                        </section>
-
-                        <section class="mb-6 space-y-3" id="skills">
-                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Skills</h2>
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">HTML</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">CSS</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">JavaScript</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">Responsive Design</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">UI/UX</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">GitHub</span>
-                                <span class="px-3 py-1 rounded-full bg-cvPanel/95 text-sm text-cvNavy border border-cvNavy/10">API Integration</span>
-                            </div>
-                        </section>
-
-                        <section class="space-y-3">
-                            <h2 class="border-b border-cvNavy/35 pb-2 text-[clamp(0.95rem,1vw,1.25rem)] font-semibold uppercase tracking-[0.12em]">Language</h2>
-                            <ul class="space-y-1 text-[clamp(0.8rem,0.92vw,1rem)] text-zinc-800">
-                                <li>English</li>
-                                <li>Filipino</li>
-                            </ul>
-                        </section>
-                            </article>
-                        <article class="page-panel space-y-3" data-page-content="profile">
-                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Profile</h2>
-                            <div class="h-px w-full bg-cvNavy/35"></div>
-                            <p class="max-w-[70ch] text-[clamp(0.92rem,1vw,1.1rem)] leading-[1.7] text-cvText/90">
-                                I am a passionate and self-motivated Web Developer who enjoys creating modern, functional, and user-friendly web applications. I have skills in front-end development and interface design, and I like turning ideas into practical digital solutions. Through personal and experimental projects, I have developed my creativity, problem-solving skills, and ability to keep learning new things. I am dedicated to improving my technical skills, adapting to new technologies, and delivering quality work.
-                            </p>
-                        </article>
-
-                        <article class="page-panel hidden space-y-3" data-page-content="experience">
-                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Experience</h2>
-                            <div class="h-px w-full bg-cvNavy/35"></div>
-                            <div class="space-y-2 text-[clamp(0.9rem,1vw,1.06rem)]">
-                                <p class="font-semibold">Web Developer</p>
-                                <p class="text-cvText/80">Project-Based</p>
-                                <ul class="list-disc space-y-1 pl-5 text-cvText/90">
-                                    <li>Developed and launched classrio.me, an educational website for students and teachers.</li>
-                                    <li>Implemented responsive design principles across mobile, tablet, and desktop.</li>
-                                    <li>Integrated modern web technologies and best practices for educational content delivery.</li>
-                                    <li>Demonstrated front-end and UI/UX skills through project-based development.</li>
-                                </ul>
-                            </div>
-                        </article>
-                        
-
-                        <article class="page-panel hidden space-y-3" data-page-content="expertise">
-                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Technical Expertise</h2>
-                            <div class="h-px w-full bg-cvNavy/35"></div>
-                            <div class="grid gap-3 sm:grid-cols-2">
-                                <div class="rounded-md border border-cvNavy/25 bg-cvPanel/95 p-3">
-                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Languages</h3>
-                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">HTML, CSS, JavaScript</p>
-                                </div>
-                                <div class="rounded-md border border-cvNavy/25 bg-cvPanel/95 p-3">
-                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Development</h3>
-                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">Web Development, Front-End, Responsive Design</p>
-                                </div>
-                                <div class="rounded-md border border-cvNavy/25 bg-cvPanel/95 p-3">
-                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Design</h3>
-                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">UI/UX Design, Interface Design</p>
-                                </div>
-                                <div class="rounded-md border border-cvNavy/25 bg-cvPanel/95 p-3">
-                                    <h3 class="text-[clamp(0.85rem,0.95vw,1rem)] font-semibold uppercase tracking-wide">Tools</h3>
-                                    <p class="mt-1 text-[clamp(0.85rem,0.95vw,1rem)]">GitHub, Version Control, API Integration</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="page-panel hidden space-y-3" data-page-content="strengths">
-                            <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Key Strengths</h2>
-                            <div class="h-px w-full bg-cvNavy/35"></div>
-                            <ul class="space-y-1 text-[clamp(0.9rem,1vw,1.06rem)] text-cvText/90">
-                                <li>Strong problem-solving and debugging abilities.</li>
-                                <li>Dedicated to continuous learning and skill improvement.</li>
-                                <li>Creative and innovative approach to web development.</li>
-                                <li>Reliable team player with excellent communication skills.</li>
-                                <li>Adaptable to new technologies and methodologies.</li>
-                                <li>Attention to detail in code quality and user experience.</li>
-                            </ul>
-                        </article>
-                        </section>
-                    </section>
-                </div>
-            </div>
-        </section>
-
-        <section id="webappsSection" class="mx-auto mt-4 hidden w-full max-w-[1200px] rounded-[32px] bg-white/95 p-4 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.15)] ring-1 ring-black/5">
-            <article class="page-panel hidden space-y-3" data-page-content="webapps">
-                <h2 class="text-[clamp(1.2rem,1.9vw,2rem)] font-semibold uppercase tracking-[0.06em] text-cvNavy/90">Web Apps</h2>
-                <div class="h-px w-full bg-cvNavy/35"></div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <a href="https://riosweb.tech" target="_blank" rel="noopener" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
-                        <div class="app-preview">
-                            <img src="previews/riosweb.tech.png" alt="RiosWeb.Tech preview">
-                        </div>
-                        <h3 class="font-semibold text-cvNavy">RiosWeb.Tech</h3>
-                        <p class="mt-2 text-sm text-cvText/80">Personal portfolio and published projects.</p>
-                    </a>
-
-                    <a href="https://classrio.me" target="_blank" rel="noopener" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
-                        <div class="app-preview">
-                            <img src="previews/classrio.me.png" alt="ClassRio preview">
-                        </div>
-                        <h3 class="font-semibold text-cvNavy">ClassRio</h3>
-                        <p class="mt-2 text-sm text-cvText/80">Educational platform project.</p>
-                    </a>
-
-                    <a href="https://elqtech.me" target="_blank" rel="noopener" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
-                        <div class="app-preview">
-                            <img src="previews/elqtech.me.png" alt="ElqTech preview">
-                        </div>
-                        <h3 class="font-semibold text-cvNavy">ElqTech</h3>
-                        <p class="mt-2 text-sm text-cvText/80">Experimental web tools and utilities.</p>
-                    </a>
-
-                    <a href="electronics-engineering.html" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
-                        <div class="app-preview">
-                            <img src="gif/drone.gif" alt="Electronics Engineering preview">
-                        </div>
-                        <h3 class="font-semibold text-cvNavy">Electronics Engineering</h3>
-                        <p class="mt-2 text-sm text-cvText/80">Site section with electronics projects.</p>
-                    </a>
-                    <a href="https://espaderarios.github.io/JC_foods/" class="group block rounded-xl border border-cvNavy/10 bg-white p-4 shadow-sm transform transition hover:shadow-lg hover:-translate-y-1">
-                        <div class="app-preview">
-                            <img src="previews/jcfoods.png" alt="JC Foods preview">
-                        </div>
-                        <h3 class="font-semibold text-cvNavy">JC Foods</h3>
-                        <p class="mt-2 text-sm text-cvText/80">Website for a local food business.</p>
-                    </a>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <script>
-        (function () {
-            const tabs = document.querySelectorAll(".page-tab");
-            const panels = document.querySelectorAll(".page-panel");
-
-            const activeClasses = [
-                'bg-gradient-to-r', 'from-cvBlue', 'to-cvNavy', 'text-white', 'ring-2', 'ring-cvBlue/40', 'shadow-lg', 'scale-105'
-            ];
-            const inactiveClasses = [
-                'bg-cvBlue/5', 'text-white', 'hover:bg-white/10', 'shadow-sm', 'scale-100'
-            ];
-
-            function setActivePage(pageName) {
-                panels.forEach((panel) => {
-                    const isTarget = panel.getAttribute("data-page-content") === pageName;
-                    panel.classList.toggle("hidden", !isTarget);
-                });
-
-                tabs.forEach((tab) => {
-                    const isTarget = tab.getAttribute("data-page") === pageName;
-                    if (isTarget) {
-                        tab.classList.remove(...inactiveClasses);
-                        tab.classList.add(...activeClasses);
-                    } else {
-                        tab.classList.remove(...activeClasses);
-                        tab.classList.add(...inactiveClasses);
-                    }
-                });
-            }
-
-            tabs.forEach((tab) => {
-                // initialize inactive look
-                tab.classList.add('rounded-xl', 'px-3', 'py-2', 'text-xs', 'font-medium', 'transition', 'duration-200');
-                tab.classList.add(...inactiveClasses);
-
-                tab.addEventListener("click", () => {
-                    const pageName = tab.getAttribute("data-page");
-                    if (pageName) setActivePage(pageName);
-                });
-            });
-
-            // top nav buttons switch between the two outer sections
-            const resumeSection = document.getElementById('resumeSection');
-            const webappsSection = document.getElementById('webappsSection');
-            const topTabs = document.querySelectorAll('.top-tab');
-
-            function setTopView(viewName) {
-                const isWebApps = viewName === 'webapps';
-
-                if (resumeSection) {
-                    resumeSection.classList.toggle('hidden', isWebApps);
-                }
-
-                if (webappsSection) {
-                    webappsSection.classList.toggle('hidden', !isWebApps);
-                }
-
-                topTabs.forEach((tab) => {
-                    const isTarget = tab.getAttribute('data-page') === viewName;
-                    tab.classList.toggle('bg-white', isTarget);
-                    tab.classList.toggle('shadow-sm', isTarget);
-                    tab.classList.toggle('hover:bg-white/80', !isTarget);
-                });
-            }
-
-            topTabs.forEach((t) => t.addEventListener('click', () => {
-                const p = t.getAttribute('data-page');
-                if (!p) return;
-
-                setTopView(p);
-
-                if (p === 'about-me') {
-                    setActivePage('about-me');
-                } else if (p === 'webapps') {
-                    setActivePage('webapps');
-                }
-            }));
-
-            // Hero buttons
-            const viewBtn = document.getElementById('viewProjectsBtn');
-            const contactBtn = document.getElementById('contactBtn');
-            if (viewBtn) viewBtn.addEventListener('click', () => setActivePage('projects'));
-            if (contactBtn) contactBtn.addEventListener('click', () => window.location = 'mailto:s.rvespadera@usm.edu.ph');
-
-            setTopView('about-me');
-            setActivePage('about-me');
-        })();
-    </script>
+  <section class="view hidden reveal" data-view-content="contact">
+    <div class="section-head"><h2>Contact</h2><p>Let's build something useful.</p></div>
+    <div class="content-grid"><article class="panel"><h2>Get In Touch</h2><p style="font-size:13px;line-height:1.8;color:#bfc0c8">For project discussions, collaboration, or questions, you can reach me through the contact details below.</p><div class="hero-actions"><a class="btn btn-primary" href="mailto:s.rvespadera@usm.edu.ph">Send Email</a><a class="btn btn-secondary" href="https://riosweb.tech" target="_blank" rel="noopener">Visit Website</a></div></article><aside class="panel"><div class="contact-list"><div class="contact-item"><small>Email</small><span>s.rvespadera@usm.edu.ph</span></div><div class="contact-item"><small>Phone</small><span>09641310220</span></div><div class="contact-item"><small>Location</small><span>Sudapin, Kidapawan City, North Cotabato</span></div><div class="contact-item"><small>Website</small><a href="https://riosweb.tech" target="_blank" rel="noopener">riosweb.tech</a></div></div></aside></div>
+  </section>
+</main>
+</div>
+<script>
+(function(){
+ const sidebar=document.getElementById('sidebar'),menu=document.getElementById('menuBtn'),overlay=document.getElementById('overlay');
+ const links=[...document.querySelectorAll('[data-view]')];
+ const views=[...document.querySelectorAll('[data-view-content]')];
+ function show(name){
+   views.forEach(v=>v.classList.toggle('hidden',v.dataset.viewContent!==name));
+   document.querySelectorAll('.side-link').forEach(b=>b.classList.toggle('active',b.dataset.view===name));
+   window.scrollTo({top:0,behavior:'smooth'});
+   sidebar.classList.remove('open');
+ }
+ links.forEach(el=>el.addEventListener('click',e=>{e.preventDefault();const name=el.dataset.view;if(name)show(name)}));
+ document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();show(el.dataset.go)}));
+ menu?.addEventListener('click',()=>sidebar.classList.toggle('open'));
+ overlay?.addEventListener('click',()=>sidebar.classList.remove('open'));
+ show('home');
+})();
+</script>
 </body>
 </html>
